@@ -1,0 +1,214 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #07111f 0%, #0f172a 100%);
+  color: #e2e8f0;
+}
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+}
+.hero p {
+  margin: 0;
+  color: #94a3b8;
+  max-width: 740px;
+}
+.meta, .summary, .controls, .card, .leaderboardPanel, .miniCard {
+  background: rgba(17, 24, 39, 0.92);
+  border: 1px solid #1f2937;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+.meta {
+  padding: 14px 16px;
+  min-width: 300px;
+  color: #cbd5e1;
+}
+.leaderboardPanel {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+.leaderboardPanel h2 {
+  margin: 0 0 6px;
+}
+.leaderboardPanel p {
+  margin: 0;
+  color: #94a3b8;
+}
+.leaderboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.miniCard {
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+}
+.miniRank {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #172033;
+  border: 1px solid #334155;
+  font-weight: 700;
+}
+.miniTitle {
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.miniMeta {
+  color: #aebfd4;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+.controls {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr auto auto auto;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+.controls input, .controls select {
+  width: 100%;
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+.summary {
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  color: #cbd5e1;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 16px;
+}
+.card {
+  padding: 16px;
+  border-left: 4px solid #334155;
+}
+.card.elite { border-left-color: #f59e0b; }
+.card.strong { border-left-color: #22c55e; }
+.card.watch { border-left-color: #38bdf8; }
+.card.speculative { border-left-color: #64748b; }
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+.line {
+  margin: 6px 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+.line.dim { color: #9fb1c8; }
+.line.good { color: #9fe6b8; }
+.line.bad { color: #f5b8b8; }
+.tagRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.tag {
+  font-size: 0.78rem;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #172033;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+}
+.tag.new {
+  background: #052e16;
+  border-color: #166534;
+  color: #bbf7d0;
+}
+.tag.collectible {
+  background: #3b0764;
+  border-color: #7e22ce;
+  color: #e9d5ff;
+}
+.tag.tier {
+  background: #172554;
+  border-color: #1d4ed8;
+  color: #bfdbfe;
+}
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.stat {
+  background: #0b1220;
+  border: 1px solid #253247;
+  border-radius: 12px;
+  padding: 10px;
+}
+.stat span {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+.stat strong {
+  font-size: 0.96rem;
+}
+a.button {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: white;
+  background: #2563eb;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.empty {
+  color: #94a3b8;
+  padding: 24px 0;
+}
+@media (max-width: 1100px) {
+  .controls { grid-template-columns: 1fr 1fr 1fr; }
+  .leaderboardPanel { grid-template-columns: 1fr; }
+}
+@media (max-width: 800px) {
+  .hero { flex-direction: column; }
+  .controls { grid-template-columns: 1fr; }
+  .meta { min-width: 0; width: 100%; }
+  .grid2 { grid-template-columns: 1fr; }
+}
